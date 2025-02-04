@@ -1,0 +1,59 @@
+body 
+{
+    background: linear-gradient(to bottom, #000000 20%, rgb(29, 29, 29) 100%);
+    margin: 0; 
+    color: white;
+    font-family: "Inria Serif", serif;
+    font-style: italic; 
+}
+
+a
+{
+    font-size: 30px;
+    font-family: "Inria Serif";
+    font-weight:200;
+    font-style: normal;
+}
+
+h1
+{
+    font-size: 85px;
+}
+
+h2
+{
+    font-size: 64px;
+}
+
+h3
+{
+    font-size: 38px;
+    font-family: "Roboto", serif;
+}
+
+h4
+{
+    font-size: 32px;
+    font-family: "Inter", serif;
+    /* color: #515050; */
+    font-style: italic
+}
+
+.dot 
+{
+    height: 15px;
+    width: 15px;
+    background-color: #515050;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot-nav
+{
+    height: 8px;
+    width: 10px;
+    background-color: #dcdcdc;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    display: inline-block;
+}
