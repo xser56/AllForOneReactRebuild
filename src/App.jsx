@@ -1,12 +1,12 @@
 import './App.css'
-
+import './components/NavBarComponent'
 function App() 
 {
 
   return (
     <>
     
-  <video
+  {/* <video
         className="absolute inset-0 w-full h-full object-cover opacity-40"
         autoPlay
         id="heroVideo"
@@ -15,7 +15,7 @@ function App()
         poster="/assets/heroImage.mp4"
       >
         <source src="/assets/heroImage.mp4" type="video/mp4" />
-      </video>
+      </video> */}
       
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center">
           <h1 className="text-white text-4xl font-bold">Code &#123; 
