@@ -1,17 +1,16 @@
-import { grabSayHello } from "../../../Services/DataServices";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { grabReverseItNumb } from "../../../Services/DataServices";
 
-const HelloWorld = () => {
-  const [userName, setUserName] = useState("");
-  const [greeting, setGreeting] = useState("");
 
-  const gretting = async () => {
-    if (userName.trim() === "") {
-      setGreeting("Please enter your name.");  
-    } else {
-      setGreeting(`Hello, ${userName}!`); 
-    }
+const reverseItNumb = () => 
+{
+  const [userInput, setUserInput] = useState("");
+  const [response, setResponse] = useState("");
+
+  const reverseItData = async () => 
+  {
+    const data = await grabReverseItNumb(userInput)
+    setResponse(data);
   };
 
 
@@ -37,11 +36,11 @@ const HelloWorld = () => {
       <div className="container-flex mx-10 rounded-3xl bg-stone-1000 border-2 bg-stone-900 border-black flex flex-col items-center p-6 h-[600px] mt-14">
         <h3 className="text-5xl font-semibold mb-4 pt-16"> Enter a sequence of numbers here</h3>
 
-            <input type="text" id="input" value={userName} onChange={(e) => setUserName(e.target.value)} placeholder="Enter your sequence here" className="w-64 p-2 border-2 border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-stone-600"/>
+            <input type="text" id="input" value={userInput} onChange={(e) => setUserInput(e.target.value)} placeholder="Enter your sequence here" className="w-64 p-2 border-2 border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-stone-600"/>
 
-            <h2 className="pt-10">{greeting}</h2>
+            <h2 className="pt-10">{response}</h2>
             
-            <button onClick={gretting} className="bg-stone-700 text-white px-6 py-2 rounded-xl hover:bg-blue-600 transition">
+            <button onClick={reverseItData} className="bg-stone-700 text-white px-6 py-2 rounded-xl hover:bg-blue-600 transition">
               Submit
             </button>
       </div>
@@ -53,4 +52,4 @@ const HelloWorld = () => {
   );
 }
 
-export default HelloWorld;
+export default reverseItNumb;

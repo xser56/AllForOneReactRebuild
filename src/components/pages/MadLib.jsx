@@ -1,17 +1,34 @@
-import { grabSayHello } from "../../../Services/DataServices";
+import { grabMadLib } from "../../../Services/DataServices";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
-const HelloWorld = () => {
-  const [userName, setUserName] = useState("");
-  const [greeting, setGreeting] = useState("");
+const madLib = () => 
+{
+  const [userInput1, setUserInput1] = useState('');
+  const [userInput2, setUserInput2] = useState('');
+  const [userInput3, setUserInput3] = useState('');
+  const [userInput4, setUserInput4] = useState('');
+  const [userInput5, setUserInput5] = useState('');
+  const [userInput6, setUserInput6] = useState('');
+  const [userInput7, setUserInput7] = useState('');
+  const [userInput8, setUserInput8] = useState('');
+  const [userInput9, setUserInput9] = useState('');
+  const [userInput10, setUserInput10] = useState('');
+  const [response, setRespnse] = useState('');
+  
+  const madLibData = async () => 
+    {
+    const inputs = [userInput1, userInput2, userInput3, userInput4, userInput5, 
+                    userInput6, userInput7, userInput8, userInput9, userInput10];
 
-  const gretting = async () => {
-    if (userName.trim() === "") {
-      setGreeting("Please enter your name.");  
-    } else {
-      setGreeting(`Hello, ${userName}!`); 
-    }
+    if (inputs.some(input => !input.trim())) 
+    {
+      setRespnse("Please fill out ALL input fields to generate story");  
+      return;
+    } 
+
+    const data = await grabMadLib(userInput1, userInput2, userInput3, userInput4, userInput5, userInput6, userInput7, userInput8, userInput9, userInput10)
+    setRespnse(data)
+    
   };
 
 
@@ -34,17 +51,60 @@ const HelloWorld = () => {
 
       {/* Form Box */}
     <div>
-      <div className="container-flex mx-10 rounded-3xl bg-stone-1000 border-2 bg-stone-900 border-black flex flex-col items-center p-6 h-[600px] mt-14">
-        <h3 className="text-5xl font-semibold mb-4 pt-16"> Enter a Name Here</h3>
+      <div className="container-flex mx-10 rounded-3xl bg-stone-1000 border-2 bg-stone-900 border-black flex flex-col items-center p-6 mt-14 ">
+        <h3 className="text-5xl font-semibold mb-7 pt-5"> Please Fill Out Each Input Field To Generate Your Story</h3>
 
-            <input type="text" id="input" value={userName} onChange={(e) => setUserName(e.target.value)} placeholder="Enter your name" className="w-64 p-2 border-2 border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-stone-600"/>
+            <div className="grid grid-rows-2 grid-cols-5 gap-12 pb-14">
 
-            <h2 className="pt-10">{greeting}</h2>
+              <input type="text" id="input1" value={userInput1} onChange={(e) => setUserInput1(e.target.value)} 
+              placeholder="Enter an animal" 
+              className="w-64 p-2 border-2 border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-stone-600"/>
+              
+              <input type="text" id="input2" value={userInput2} onChange={(e) => setUserInput2(e.target.value)} 
+              placeholder="Enter a container" 
+              className="w-64 p-2 border-2 border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-stone-600"/>
+
+              <input type="text" id="input3" value={userInput3} onChange={(e) => setUserInput3(e.target.value)} 
+              placeholder="Enter your least favorite color" 
+              className="w-64 p-2 border-2 border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-stone-600"/>
+
+              <input type="text" id="input4" value={userInput4} onChange={(e) => setUserInput4(e.target.value)} 
+              placeholder="Enter a body covering " 
+              className="w-64 p-2 border-2 border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-stone-600"/>
+
+              <input type="text" id="input5" value={userInput5} onChange={(e) => setUserInput5(e.target.value)} 
+              placeholder="Enter a verb" 
+              className="w-64 p-2 border-2 border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-stone-600"/>
+
+              <input type="text" id="input6" value={userInput6} onChange={(e) => setUserInput6(e.target.value)} 
+              placeholder="Enter a favorite object" 
+              className="w-64 p-2 border-2 border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-stone-600"/>
+
+              <input type="text" id="input7" value={userInput7} onChange={(e) => setUserInput7(e.target.value)} 
+              placeholder="Enter a favorite food" 
+              className="w-64 p-2 border-2 border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-stone-600"/>
+
+              <input type="text" id="input8" value={userInput8} onChange={(e) => setUserInput8(e.target.value)} 
+              placeholder="Enter an activity" 
+              className="w-64 p-2 border-2 border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-stone-600"/>
+
+              <input type="text" id="input9" value={userInput9} onChange={(e) => setUserInput9(e.target.value)} 
+              placeholder="change apperearnce" 
+              className="w-64 p-2 border-2 border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-stone-600"/>
+              
+              <input type="text" id="input10" value={userInput10} onChange={(e) => setUserInput10(e.target.value)} 
+              placeholder="Enter a favorite color" 
+              className="w-64 p-2 border-2 border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-stone-600"/>
             
-            <button onClick={gretting} className="bg-stone-700 text-white px-6 py-2 rounded-xl hover:bg-blue-600 transition">
+            </div>
+
+
+            <button onClick={madLibData} className="bg-stone-700 text-white px-6 py-2 rounded-xl hover:bg-blue-600 transition">
               Submit
             </button>
-      </div>
+
+            <h3 className="pt-10 flex justify-center text-4xl font-bold">{response}</h3>
+            </div>
 
       <br />
       <br />
@@ -53,4 +113,4 @@ const HelloWorld = () => {
   );
 }
 
-export default HelloWorld;
+export default madLib;

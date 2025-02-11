@@ -13,12 +13,8 @@ const HelloWorld = () => {
     if (userName.trim() === "") 
     {
       setGreeting("Please enter your name.");  
-    } else 
-    {
-      sayHello(); 
     }
   };
-
 
   return (
     <>
@@ -43,17 +39,13 @@ const HelloWorld = () => {
       <div className="container-flex mx-10 rounded-3xl bg-stone-1000 border-2 bg-stone-900 border-black flex flex-col items-center p-6 h-[600px] mt-14">
         <h3 className="text-5xl font-semibold mb-4 pt-16"> Enter a Name Here</h3>
 
-            <input 
-            type="text" 
-            id="input" 
-            value={userName} 
-            onChange={(e) => setUserName(e.target.value)} 
+            <input type="text" id="input" value={userName} onChange={(e) => setUserName(e.target.value)} 
             placeholder="Enter your name" 
             className="w-64 p-2 border-2 border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-stone-600"/>
 
             <h2 className="pt-10">{greeting}</h2>
             
-            <button onClick={greeting} 
+            <button onClick={sayHello} 
             className="bg-stone-700 text-white px-6 py-2 rounded-xl hover:bg-blue-600 transition">
               Submit
             </button>

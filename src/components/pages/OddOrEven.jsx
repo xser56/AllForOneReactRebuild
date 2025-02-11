@@ -1,19 +1,22 @@
-import { grabSayHello } from "../../../Services/DataServices";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { grabOddOrEven } from "../../../Services/DataServices";
 
-const HelloWorld = () => {
-  const [userName, setUserName] = useState("");
-  const [greeting, setGreeting] = useState("");
+const OddOrEven = () => 
+{
+  const [userInput1, setInput1] = useState("");
+  const [response, setResponse] = useState("");
 
-  const gretting = async () => {
-    if (userName.trim() === "") {
-      setGreeting("Please enter your name.");  
-    } else {
-      setGreeting(`Hello, ${userName}!`); 
-    }
+  const oddOrEvenData = async () => 
+  {
+    const data = await grabOddOrEven(userInput1)
+    setResponse(data)
+
+    // if (userInput1.trim() === "")
+    // {
+    //   setResponse("Please enter a number");  
+    // } 
+
   };
-
 
   return (
     <>
@@ -35,13 +38,15 @@ const HelloWorld = () => {
       {/* Form Box */}
     <div>
       <div className="container-flex mx-10 rounded-3xl bg-stone-1000 border-2 bg-stone-900 border-black flex flex-col items-center p-6 h-[600px] mt-14">
-        <h3 className="text-5xl font-semibold mb-4 pt-16"> Enter a Name Here</h3>
+        <h3 className="text-5xl font-semibold mb-4 pt-16"> Enter a number here</h3>
 
-            <input type="text" id="input" value={userName} onChange={(e) => setUserName(e.target.value)} placeholder="Enter your name" className="w-64 p-2 border-2 border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-stone-600"/>
+            <input type="text" id="input" value={userInput1} onChange={(e) => setInput1(e.target.value)} 
+            placeholder="Enter your name" 
+            className="w-64 p-2 border-2 border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-stone-600"/>
 
-            <h2 className="pt-10">{greeting}</h2>
+            <h2 className="pt-10">{response}</h2>
             
-            <button onClick={gretting} className="bg-stone-700 text-white px-6 py-2 rounded-xl hover:bg-blue-600 transition">
+            <button onClick={oddOrEvenData} className="bg-stone-700 text-white px-6 py-2 rounded-xl hover:bg-blue-600 transition">
               Submit
             </button>
       </div>
@@ -53,4 +58,4 @@ const HelloWorld = () => {
   );
 }
 
-export default HelloWorld;
+export default OddOrEven;
