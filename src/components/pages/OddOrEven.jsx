@@ -41,7 +41,7 @@ const OddOrEven = () =>
         <h3 className="text-5xl font-semibold mb-4 pt-16"> Enter a number here</h3>
 
             <input type="text" id="input" value={userInput1} onChange={(e) => setInput1(e.target.value)} 
-            placeholder="Enter your name" 
+            placeholder="Enter a number here" 
             className="w-64 p-2 border-2 border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-stone-600"/>
 
             <h2 className="pt-10">{response}</h2>

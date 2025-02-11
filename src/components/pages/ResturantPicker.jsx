@@ -35,7 +35,9 @@ const resturantPicker = () =>
         <h3 className="text-5xl font-semibold mb-4 pt-16"> Please choose a food you would like to eat: </h3>
         <h3 className="text-5xl mb-10 mt-3"> Chinese Japanese Mexican</h3>
 
-            <input type="text" id="input" value={userInput} onChange={(e) => setUserInput(e.target.value)} placeholder="Enter your Food Choice Here" className="w-64 p-2 border-2 border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-stone-600"/>
+            <input type="text" id="input" value={userInput} onChange={(e) => setUserInput(e.target.value)} 
+            placeholder="Enter your Food Choice Here" 
+            className="w-64 p-2 border-2 border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-stone-600"/>
 
             <h2 className="pt-10">{response}</h2>
             

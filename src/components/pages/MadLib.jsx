@@ -57,43 +57,43 @@ const madLib = () =>
             <div className="grid grid-rows-2 grid-cols-5 gap-12 pb-14">
 
               <input type="text" id="input1" value={userInput1} onChange={(e) => setUserInput1(e.target.value)} 
-              placeholder="Enter an animal" 
+              placeholder="Enter a Name" 
               className="w-64 p-2 border-2 border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-stone-600"/>
               
               <input type="text" id="input2" value={userInput2} onChange={(e) => setUserInput2(e.target.value)} 
-              placeholder="Enter a container" 
+              placeholder="Enter a Name " 
               className="w-64 p-2 border-2 border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-stone-600"/>
 
               <input type="text" id="input3" value={userInput3} onChange={(e) => setUserInput3(e.target.value)} 
-              placeholder="Enter your least favorite color" 
+              placeholder="Enter a Store" 
               className="w-64 p-2 border-2 border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-stone-600"/>
 
               <input type="text" id="input4" value={userInput4} onChange={(e) => setUserInput4(e.target.value)} 
-              placeholder="Enter a body covering " 
+              placeholder="Enter a beverage" 
               className="w-64 p-2 border-2 border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-stone-600"/>
 
               <input type="text" id="input5" value={userInput5} onChange={(e) => setUserInput5(e.target.value)} 
-              placeholder="Enter a verb" 
+              placeholder="Enter a snack" 
               className="w-64 p-2 border-2 border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-stone-600"/>
 
               <input type="text" id="input6" value={userInput6} onChange={(e) => setUserInput6(e.target.value)} 
-              placeholder="Enter a favorite object" 
+              placeholder="Enter a sport" 
               className="w-64 p-2 border-2 border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-stone-600"/>
 
               <input type="text" id="input7" value={userInput7} onChange={(e) => setUserInput7(e.target.value)} 
-              placeholder="Enter a favorite food" 
+              placeholder="Enter a movie" 
               className="w-64 p-2 border-2 border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-stone-600"/>
 
               <input type="text" id="input8" value={userInput8} onChange={(e) => setUserInput8(e.target.value)} 
-              placeholder="Enter an activity" 
+              placeholder="Enter a restaurant" 
               className="w-64 p-2 border-2 border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-stone-600"/>
 
               <input type="text" id="input9" value={userInput9} onChange={(e) => setUserInput9(e.target.value)} 
-              placeholder="change apperearnce" 
+              placeholder="Enter a videogame" 
               className="w-64 p-2 border-2 border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-stone-600"/>
               
               <input type="text" id="input10" value={userInput10} onChange={(e) => setUserInput10(e.target.value)} 
-              placeholder="Enter a favorite color" 
+              placeholder="Enter a food" 
               className="w-64 p-2 border-2 border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-stone-600"/>
             
             </div>
