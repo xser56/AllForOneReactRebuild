@@ -1,28 +1,37 @@
 import './App.css'
-import './components/NavBarComponent'
+import NavBarComponent from './components/NavBarComponent';
 function App() 
 {
 
   return (
     <>
     
-  {/* <video
-        className="absolute inset-0 w-full h-full object-cover opacity-40"
-        autoPlay
-        id="heroVideo"
-        loop
-        muted
-        poster="/assets/heroImage.mp4"
-      >
-        <source src="/assets/heroImage.mp4" type="video/mp4" />
-      </video> */}
-      
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center">
-          <h1 className="text-white text-4xl font-bold">Code &#123; 
-           Inside &#125; <br /></h1>
-          <h4 className="text-white">AllForOne</h4>
+    <div className="relative w-full h-screen overflow-hidden">
+        {/* Navbar Inside Hero */}
+        <NavBarComponent />
+
+        <video
+          className="absolute top-0 left-0 w-full h-full object-cover opacity-40"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src="/assets/heroImage.mp4" type="video/mp4" />
+        </video>
+
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
+          <h1 className="text-4xl font-bold">
+            Code &#123; Inside &#125;
+          </h1>
+          <h4>AllForOne</h4>
           <h4 className="text-stone-400">|| By Andrew Sayasing</h4>
         </div>
+
+        {/* Gradient Fade Effect at the Bottom */}
+        <div className="absolute bottom-0 w-full h-20 bg-gradient-to-t from-black to-transparent"></div>
+      </div>
+
   {/* About Section */}
     <div className="contianer mx-10">
         <section className="mt-20">

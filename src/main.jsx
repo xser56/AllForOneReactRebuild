@@ -21,9 +21,11 @@ import { Component } from 'react'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
+    <Routes>
+        <Route path='/' element={<App />}/>
+    </Routes>
     <NavBar/>
       <Routes>
-        <Route path='/' element={<App />}/>
         <Route path='/helloWorld' element={<HelloWorld />}/>
         <Route path='/Adding' element={<Adding />}/>
         <Route path='/AskingQuestions' element={<AskingQuestions />}/>
