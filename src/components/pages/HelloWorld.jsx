@@ -21,7 +21,7 @@ const HelloWorld = () => {
       <div className="contianer mx-20">
         <section className="mt-20">
           <h2>
-            Hello World <hr className="inline-block w-[78%] border-3 m-4" />
+            Hello World <hr className="inline-block w-[78%] border-3 m-4 text-2xl md:text-3xl md:whitespace-nowrap" />
           </h2>
           <h3 className="text-stone-500 italic mx-20 font-light">
             - an API endpoint that receives user input and outputs a
